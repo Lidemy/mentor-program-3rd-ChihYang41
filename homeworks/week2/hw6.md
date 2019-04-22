@@ -47,12 +47,12 @@ isValid([3, 5, 8, 13, 22, 35])
 
 17. 執行第五行，宣告 i 為 2，判斷 i 有沒有小於 arr.length，有的話往下執行，沒有的話停止這個 for loop，i 為 2 小於 arr.length 所以往下一行執行。
 
-18. 判斷 arr[2] 是否不相等於 arr[1]加 arr[0]，如果不相等，就回傳 'invalid'，並結束 function，如果相等，就繼續下一層迴圈。判斷為相等，執行下一層迴圈。
+18. 判斷 arr[2]是否不相等於 arr[1]加 arr[0]，如果不相等，就回傳 'invalid'，並結束 function，如果相等，就繼續下一層迴圈。判斷為相等，執行下一層迴圈。
 
 19. i + 1 變為 3，判斷 i 有沒有小於 arr.length，有的話往下執行，沒有的話停止這個 for loop，i 為 3 小於 arr.length 所以往下一行執行。
 
-20. 判斷 arr[3] 是否不相等於 arr[2]加 arr[1]，如果不相等，就回傳 'invalid'，並結束 function，如果相等，就繼續下一層迴圈。判斷為相等，執行下一層迴圈。
+20. 判斷 arr[3]是否不相等於 arr[2]加 arr[1]，如果不相等，就回傳 'invalid'，並結束 function，如果相等，就繼續下一層迴圈。判斷為相等，執行下一層迴圈。
 
 21. i + 1 變為 4，判斷 i 有沒有小於 arr.length，有的話往下執行，沒有的話停止這個 for loop，i 為 4 小於 arr.length 所以往下一行執行。
 
-22. 判斷 arr[4] 是否不相等於 arr[3]加 arr[2]，如果不相等，就回傳 'invalid'，並結束 function，如果相等，就繼續下一層迴圈。判斷為不相等，所以回傳 'invalid'並且結束 function。
+22. 判斷 arr[4]是否不相等於 arr[3]加 arr[2]，如果不相等，就回傳 'invalid'，並結束 function，如果相等，就繼續下一層迴圈。判斷為不相等，所以回傳'invalid'並且結束 function。
