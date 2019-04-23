@@ -1,6 +1,6 @@
 function search(arr, n) {
   let low = 0;
-  let high = arr.length;
+  let high = arr.length - 1;
   let mid;
   let element;
   while (low <= high) {
