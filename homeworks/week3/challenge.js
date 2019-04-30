@@ -25,7 +25,7 @@ const mutiply = (a, b) => {
     const decimal = result[i];
     if (decimal > 9) {
       result[i] = decimal % 10;
-      result[i + 1] = Math.floor(decimal / 10);
+      result[i + 1] += Math.floor(decimal / 10);
     }
   }
   // 把陣列 reverse 並且組成字串回傳
