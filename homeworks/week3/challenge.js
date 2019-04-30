@@ -23,6 +23,12 @@ const mutiply = (a, b) => {
   const newLen = result.length;
   for (let i = 0; i < newLen; i += 1) {
     const decimal = result[i];
+    // 避免因為少進行一次迴圈出現 NaN 所寫的判斷式
+    if (newLen === 1) {
+      break;
+    } else if (result[newLen - 1].toString().length === 2) {
+      break;
+    }
     if (decimal > 9) {
       result[i] = decimal % 10;
       result[i + 1] += Math.floor(decimal / 10);
@@ -32,4 +38,4 @@ const mutiply = (a, b) => {
   return result.reverse().join('');
 };
 
-console.log(mutiply('12135465', '45468789'));
+console.log(mutiply('9', '9'));
