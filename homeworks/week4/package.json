@@ -1,0 +1,15 @@
+{
+  "name": "week4",
+  "version": "1.0.0",
+  "description": "## API 文件",
+  "main": "hw1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "process": "^0.11.10",
+    "request": "^2.88.0"
+  }
+}
