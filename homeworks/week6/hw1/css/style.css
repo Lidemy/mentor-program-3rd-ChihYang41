@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+/*nav-bar*/
+body {
+    background: #E3E3E3;
+}
+
+nav {
+    background: #222831;
+    color: #ffffff;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    padding: 20px;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgba(225, 225, 225);
+}
+
+nav a:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.nav__title {
+    font-size: 24px;
+    font-weight: bold;
+    transition: all 0.5s;
+}
+
+.nav__title:hover {
+    transform: rotate(360deg);
+}
+
+/*header*/
+
+header {
+    color: #ffffff;
+    padding: 60px 0px;
+    background: url(../unnamed.jpg) no-repeat top center;
+    background-size: cover;
+}
+
+header .header__container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 72px;
+    margin-bottom: 20px;
+}
+
+header .header__learn_more {
+    border-radius: 10px;
+    border-style: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    color: #d65a31;
+    margin-top: 30px;
+    background: transparent;
+    transition: all 0.5s;
+    border: 2px solid #d65a31;
+}
+
+header .header__learn_more:hover {
+    background: #d65a31;
+    color: #ffffff;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+header .header__learn_more a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*main-content*/
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    padding: 60px 0px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+main .pack {
+    margin: 0px 10px;
+    width: 33%;
+}
+
+main .pack__title {
+    font-size: 36px;
+    padding: 20px 0px;
+}
+
+main .pack__btn {
+    border-style: none;
+    background: transparent;
+    color: #d65a31;
+    border: 2px solid #d65a31;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: all 0.5s;
+}
+
+main .pack__btn:hover {
+    cursor: pointer;
+    color: #ffffff;
+    background: #d65a31;
+    transform: scale(1.2);
+}
+
+main .pack__btn a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/*footer*/
+
+footer {
+    width: 70%;
+    margin: 60px auto 0 auto;
+    padding: 15px 0px;
+    border-top: 1px solid #000000;
+}
+
+/*RWD*/
+
+@media(max-width: 768px) {
+    main {
+        display: block;
+        padding: 0px;
+    }
+
+    main .pack {
+        width: 100%;
+        margin: 20px 0px;
+    }
+}
