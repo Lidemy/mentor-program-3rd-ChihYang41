@@ -43,8 +43,8 @@ submitForm.addEventListener('submit', (e) => {
       if (inputRequired[i].style.borderBottomColor !== 'rgb(234, 53, 53)') {
         addReminder(inputRequired[i]);
       }
+      finalCheck = false;
     }
-    finalCheck = false;
   }
   if (finalCheck) {
     const other = document.querySelector('#other');
