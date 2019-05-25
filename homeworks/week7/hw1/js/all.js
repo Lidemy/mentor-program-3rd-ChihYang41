@@ -16,8 +16,8 @@ function getRandomColor() {
   return color;
 }
 
-btn.addEventListener('click', (e) => {
-  if (e.target.nodeName === 'BUTTON') {
+function startGame(e) {
+  if (e.target.nodeName === 'BUTTON' || e.keyCode === 82) {
     // 重置開始時間
     startTime = 0;
     // 初始化背景顏色
@@ -34,9 +34,9 @@ btn.addEventListener('click', (e) => {
     btn.innerText = '再來一次';
     btn.classList.toggle('hide__btn');
   }
-});
+}
 
-body.addEventListener('click', () => {
+function mouseClick() {
   // 避免有人點開始遊戲以外的判斷
   if (btn.innerText === '開始遊戲') {
     alert('請點開始遊戲');
@@ -57,5 +57,14 @@ body.addEventListener('click', () => {
       btn.classList.toggle('hide__btn');
     }
     gameStarted = false;
+  }
+}
+btn.addEventListener('click', startGame);
+body.addEventListener('keydown', startGame);
+
+body.addEventListener('click', mouseClick);
+body.addEventListener('keydown', (e) => {
+  if (e.keyCode === 32) {
+    mouseClick();
   }
 });
