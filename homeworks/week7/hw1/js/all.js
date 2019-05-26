@@ -17,26 +17,26 @@ function getRandomColor() {
 }
 
 function startGame(e) {
-  if (e.target.nodeName === 'BUTTON' || e.keyCode === 82) {
-    // 重置開始時間
-    startTime = 0;
-    // 初始化背景顏色
-    body.style.background = '#003246';
-    // 背景變色，並且從變色開始計算時間
-    colorTimer = setTimeout(() => {
-      body.style.background = getRandomColor();
-      startTime = new Date();
-    }, time);
-    // 沒寫 e.stopPropagation 會產生冒泡到 body 然後觸發 function clickViewport 跑出 alert 的問題
-    e.stopPropagation();
-    // 隱藏開始遊戲按鈕，改變裡面文字，設定遊戲狀態為已開始
-    gameStarted = true;
-    btn.innerText = '再來一次';
-    btn.classList.toggle('hide__btn');
-  }
+  // 重置開始時間
+  startTime = 0;
+  // 初始化背景顏色
+  body.style.background = '#003246';
+  // 背景變色，並且從變色開始計算時間
+  colorTimer = setTimeout(() => {
+    body.style.background = getRandomColor();
+    startTime = new Date();
+  }, time);
+  // 沒寫 e.stopPropagation 會產生冒泡到 body 然後觸發 function mouseClick 跑出 alert 的問題
+  e.stopPropagation();
+  // 隱藏開始遊戲按鈕，改變裡面文字，設定遊戲狀態為已開始
+  gameStarted = true;
+  btn.innerText = '再來一次';
+  btn.classList.toggle('hide__btn');
 }
 
+
 function mouseClick() {
+  const { backgroundColor } = body.style;
   // 避免有人點開始遊戲以外的判斷
   if (btn.innerText === '開始遊戲') {
     alert('請點開始遊戲');
@@ -45,7 +45,7 @@ function mouseClick() {
     if (gameStarted) {
       endTime = new Date();
       const score = (endTime - startTime) / 1000;
-      if (score > 999999999) {
+      if (backgroundColor === 'rgb(0, 50, 70)') {
         alert('還沒變色喔，挑戰失敗');
         clearTimeout(colorTimer);
       } else {
@@ -59,8 +59,17 @@ function mouseClick() {
     gameStarted = false;
   }
 }
-btn.addEventListener('click', startGame);
-body.addEventListener('keydown', startGame);
+
+btn.addEventListener('click', (e) => {
+  if (e.target.nodeName === 'BUTTON') {
+    startGame(e);
+  }
+});
+body.addEventListener('keydown', (e) => {
+  if (e.keyCode === 82) {
+    startGame(e);
+  }
+});
 
 body.addEventListener('click', mouseClick);
 body.addEventListener('keydown', (e) => {
