@@ -4,7 +4,7 @@ let firstNumber = '';
 let secondNumber = '';
 let operator = '';
 
-function initailize() {
+function initialize() {
   firstNumber = '';
   secondNumber = '';
   operator = '';
@@ -26,25 +26,25 @@ btn.addEventListener('click', (e) => {
       case '+': {
         const plusNumber = Number(firstNumber) + Number(secondNumber);
         result.innerText = plusNumber;
-        initailize();
+        initialize();
         break;
       }
       case '-': {
         const minusNumber = Number(firstNumber) - Number(secondNumber);
         result.innerText = minusNumber;
-        initailize();
+        initialize();
         break;
       }
       case '×': {
         const mutiplyNumber = Number(firstNumber) * Number(secondNumber);
         result.innerText = mutiplyNumber;
-        initailize();
+        initialize();
         break;
       }
       case '÷': {
         const divideNumber = Number(firstNumber) / Number(secondNumber);
         result.innerText = divideNumber;
-        initailize();
+        initialize();
         break;
       }
       default:
@@ -54,6 +54,6 @@ btn.addEventListener('click', (e) => {
   }
   if (e.target.innerText === 'AC') {
     result.innerText = '0';
-    initailize();
+    initialize();
   }
 });
