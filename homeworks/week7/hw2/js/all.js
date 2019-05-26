@@ -3,8 +3,8 @@ const radioRequired = document.querySelectorAll('.input__radio');
 const submitForm = document.querySelector('.main__form');
 
 // 新增提醒
-function addReminder(parameter) {
-  const target = parameter;
+function addReminder(node) {
+  const target = node;
   target.closest('.container__required').style.background = '#ffd6d6';
   target.style.borderBottom = '2px solid #ea3535';
   const reminder = document.createElement('div');
@@ -15,8 +15,8 @@ function addReminder(parameter) {
 }
 
 // 移除提醒
-function removeReminder(parameter) {
-  const target = parameter;
+function removeReminder(node) {
+  const target = node;
   target.closest('.container__required').style.background = '';
   target.style.borderBottom = '2px solid #E3E3E3';
   target.closest('.container__required').removeChild(target.closest('.container__required').childNodes[3]);
