@@ -1,0 +1,53 @@
+body {
+    background: #dedede;
+}
+
+.title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.comment {
+    width: 70%;
+    margin: 0 auto;
+    background: #d2f3e0;
+    padding: 40px 30px;
+}
+
+.comment__list li {
+    border: 2px solid #33313b;
+    border-radius: 5px;
+    padding: 25px;
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.comment__board {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment__board textarea {
+    width: 80%;
+    height: 200px;
+    font-size: 18px;
+    outline: none;
+    border-radius: 5px;
+}
+
+.comment__board-btn {
+    font-size: 24px;
+    padding: 25px 45px;
+    border-style: none;
+    border-radius: 5px;
+    background: #fff3b1;
+    transition: all 0.5s;
+    outline: none;
+}
+
+.comment__board-btn:hover {
+    cursor: pointer;
+    background: #fdcb6e;
+}
