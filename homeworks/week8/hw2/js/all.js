@@ -42,8 +42,9 @@ async function postComment() {
     if (response.ok) {
       showComment();
       commentTextarea.value = '';
+    } else {
+      alert('發生錯誤，請重新整理');
     }
-    alert('發生錯誤，請重新整理');
   } catch (error) {
     alert(`錯誤：${error}`);
   }
