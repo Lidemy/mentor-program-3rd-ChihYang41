@@ -1,0 +1,126 @@
+body {
+    background-image: url(http://dry.hk/wp-content/uploads/2017/09/bSjQKEc.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+    color: #ffffff;
+    padding-bottom: 70px;
+}
+
+.text__overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 40px;
+    background: #000000;
+}
+
+.nav__title {
+    font-size: 24px;
+}
+
+
+.game__list {
+    display: flex;
+    flex-direction: row;
+}
+
+.game__list li {
+    color: #E3E3E3;
+    margin-left: 20px;
+}
+
+.game__list li:hover {
+    color: #ffffff;
+    opacity: 1.0;
+    cursor: pointer;
+}
+
+main {
+    width: 100%;
+    margin: 40px auto 20px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.main__subtitle {
+    font-size: 18px;
+    text-align: center;
+}
+
+.stream__card {
+    margin: 5px;
+    border-radius: 3px;
+    padding: 5px;
+    background: #000000;
+    transition: all 0.3s;
+    opacity: 0.9;
+}
+
+.stream__card:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    opacity: 1.0;
+}
+
+.stream__card a {
+    text-decoration: none;
+}
+
+.stream__info {
+    margin-top: 3px;
+    padding: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 250px;
+}
+
+.stream__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.stream__name {
+    color: #fff;
+    margin-left: 10px;
+    line-height: 1.5;
+}
+
+.btn {
+    display: block;
+    border-style: none;
+    border-radius: 5px;
+    background: #ffffff;
+    width: 140px;
+    height: 70px;
+    font-size: 18px;
+    margin: 60px auto 0 auto;
+    transition: all 0.3s;
+    outline: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background: #a06ee1;
+    color: #ffffff;
+}
