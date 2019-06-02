@@ -14,7 +14,7 @@ AJAX 是 Asynchronous JavaScript and XML 的縮寫，結尾之所以是 XML 是�
 ## 用 Ajax 與我們用表單送出資料的差別在哪？
 ### 表單
 表單的進行流程是：
-1. JavaScript 丟 request 給瀏覽器
+1. client 丟 request 給瀏覽器
 2. 瀏覽器再把 reqeust 丟給 server 
 3. server 回傳 response
 4. 瀏覽器直接把 response 渲染到畫面上

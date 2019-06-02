@@ -50,7 +50,7 @@ async function lottery() {
       console.log(`Status code : ${res.status}`);
       return null;
     });
-    const data = await response.prize;
+    const data = response.prize;
     showLotteryResult(data);
   } catch (error) {
     alert('系統不穩定，請再試一次');
