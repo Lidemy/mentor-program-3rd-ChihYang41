@@ -1,11 +1,42 @@
 const qs = selector => document.querySelector(selector);
 
 // 宣告變數
-const myClientId = 'z97jvca5asox81v22jbb24eziykct5';
-const url = 'https://api.twitch.tv/kraken/streams/';
-const limit = 20;
 let offset = 0;
 let gameName = 'League%20of%20Legends';
+
+class Request {
+  constructor() {
+    this.clientId = 'z97jvca5asox81v22jbb24eziykct5';
+  }
+
+  getPopularGames() {
+    const url = 'https://api.twitch.tv/kraken/games/top?limit=5';
+    const headers = new Headers({ 'Client-Id': this.clientId });
+    const myInit = { headers };
+    return fetch(url, myInit).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      alert('錯誤，請重新整理');
+      return null;
+    });
+  }
+
+  getLiveStreams() {
+    const url = 'https://api.twitch.tv/kraken/streams/';
+    const headers = new Headers({ 'Client-Id': this.clientId });
+    const myInit = { headers };
+    return fetch(`${url}?game=${gameName}&limit=20&offset=${offset}`, myInit).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      alert('錯誤，請重新整理');
+      return null;
+    });
+  }
+}
+
+const getRequest = new Request();
 
 // 把前五熱門遊戲渲染到 nav bar 上
 function showNavbarTop5Games(response) {
@@ -41,17 +72,8 @@ function renderStreamCards(response) {
 
 // 非同步 function 取得前五熱門遊戲
 async function getTop5Games() {
-  const top5GamesUrl = 'https://api.twitch.tv/kraken/games/top?limit=5';
   try {
-    const headers = new Headers({ 'Client-Id': myClientId });
-    const myInit = { headers };
-    const response = await fetch(top5GamesUrl, myInit).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      console.log('錯誤，請重新整理');
-      return null;
-    });
+    const response = await getRequest.getPopularGames();
     showNavbarTop5Games(response);
   } catch (error) {
     console.log(`錯誤，請重新整理 ${error}`);
@@ -59,17 +81,9 @@ async function getTop5Games() {
 }
 
 // 從 API 取得前 20 名最熱門直播，取得資料後渲染到畫面上
-async function getStreams() {
+async function getTop20Streams() {
   try {
-    const headers = new Headers({ 'Client-Id': myClientId });
-    const myInit = { headers };
-    const response = await fetch(`${url}?game=${gameName}&limit=${limit}&offset=${offset}`, myInit).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      console.log('錯誤，請重新整理');
-      return null;
-    });
+    const response = await getRequest.getLiveStreams();
     renderStreamCards(response);
   } catch (error) {
     alert(`錯誤，請重新整理 ${error}`);
@@ -79,7 +93,7 @@ async function getStreams() {
 // 點擊按鈕顯示更多遊戲直播
 qs('.btn').addEventListener('click', () => {
   offset += 20;
-  getStreams();
+  getTop20Streams();
 });
 
 // 點擊 nav bar 遊戲名字，可以切換熱門直播
@@ -89,10 +103,10 @@ qs('.game__list').addEventListener('click', (e) => {
     qs('main').innerHTML = '';
     qs('.main__title').innerText = e.target.innerText;
     gameName = e.target.innerText.split(' ').join('%20');
-    getStreams();
+    getTop20Streams();
   }
 });
 
 // 執行顯示前五熱門遊戲跟顯示熱門直播的async function
 getTop5Games();
-getStreams();
+getTop20Streams();
