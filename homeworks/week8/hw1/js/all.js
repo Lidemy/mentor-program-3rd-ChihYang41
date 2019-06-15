@@ -3,35 +3,72 @@ const body = document.querySelector('body');
 const lotteryTitle = document.querySelector('.title');
 const lotteryImage = document.querySelector('.lottery__image');
 
+class Prize {
+  constructor(title, imgUrl, bgClass) {
+    this.title = title;
+    this.imgUrl = imgUrl;
+    this.bgColorClass = bgClass;
+  }
+
+  getFirstPrize() {
+    this.title = '恭喜你中頭獎了！日本東京來回雙人遊！';
+    this.imgUrl = 'http://pixelartmaker.com/art/cec844662085081.png';
+    this.bgColorClass = 'first__prize__background';
+    this.showPrizeResult();
+  }
+
+  getSecondPrize() {
+    this.title = '二獎！90 吋電視一台！';
+    this.imgUrl = 'https://cdn4.iconfinder.com/data/icons/random-8-bit-pixel/512/tv-512.png';
+    this.bgColorClass = 'second__prize__background';
+    this.showPrizeResult();
+  }
+
+  getThirdPrize() {
+    this.title = '恭喜你抽中三獎：知名 YouTuber 簽名握手會入場券一張，bang！';
+    this.imgUrl = 'http://pixelartmaker.com/art/ab3778dba76ba4f.png';
+    this.bgColorClass = 'third__prize__background';
+    this.showPrizeResult();
+  }
+
+  getNone() {
+    this.title = '銘謝惠顧';
+    this.imgUrl = '';
+    this.bgColorClass = 'none__prize__background';
+    lotteryImage.classList.add('hidden');
+    this.showPrizeResult();
+  }
+
+  showPrizeResult() {
+    lotteryTitle.innerText = this.title;
+    lotteryImage.src = this.imgUrl;
+    body.classList.add(this.bgColorClass);
+  }
+}
+
 // 初始化背景顏色
 function initializeBackground() {
-  body.style.backgroundColor = '#fffbbe';
-  body.style.color = '#000000';
+  body.classList.add('bg_initialize');
+  body.className = '';
 }
 
 // 渲染抽獎結果到畫面上
 function showLotteryResult(prize) {
+  const prizeResult = new Prize();
   lotteryImage.classList.remove('hidden');
   initializeBackground();
   switch (prize) {
     case 'FIRST':
-      lotteryTitle.innerText = '恭喜你中頭獎了！日本東京來回雙人遊！';
-      lotteryImage.src = 'http://pixelartmaker.com/art/cec844662085081.png';
-      body.classList.toggle('first__prize__background');
+      prizeResult.getFirstPrize();
       break;
     case 'SECOND':
-      lotteryTitle.innerText = '二獎！90 吋電視一台！';
-      lotteryImage.src = 'https://cdn4.iconfinder.com/data/icons/random-8-bit-pixel/512/tv-512.png';
+      prizeResult.getSecondPrize();
       break;
     case 'THIRD':
-      lotteryTitle.innerText = '恭喜你抽中三獎：知名 YouTuber 簽名握手會入場券一張，bang！';
-      lotteryImage.src = 'http://pixelartmaker.com/art/ab3778dba76ba4f.png';
+      prizeResult.getThirdPrize();
       break;
     case 'NONE':
-      lotteryTitle.innerText = '銘謝惠顧';
-      lotteryImage.classList.add('hidden');
-      body.style.backgroundColor = '#000000';
-      body.style.color = '#ffffff';
+      prizeResult.getNone();
       break;
     default:
       // statements_def
@@ -59,17 +96,3 @@ async function lottery() {
 
 // btn 的監聽事件
 btn.addEventListener('click', lottery);
-
-// 抽獎機率第一次跑完 for loop 100 次測試的結果
-// first : 6%;
-// second : 22%;
-// third : 28%;
-// none: 41%;
-// error : 3%;
-
-// 每次都不太一定，約莫跑了幾次 for loop 後
-// first : 1~7%;
-// second: 16~22%;
-// third: 26~32%;
-// nonr: 41~48%;
-// error: 2~6%;

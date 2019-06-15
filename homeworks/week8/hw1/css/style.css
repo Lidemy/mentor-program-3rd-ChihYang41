@@ -13,6 +13,11 @@ body {
     margin-top: -120px;
 }
 
+.bg_initialize {
+    background: #fffbbe;
+    color: #000000;
+}
+
 .title {
     font-size: 48px;
     margin-bottom: 30px;
@@ -44,3 +49,19 @@ body {
     visibility: hidden;
 }
 
+.first__prize__background {
+    background: #7ad9f5;
+}
+
+.second__prize__background {
+    background: #d2f3e0;
+}
+
+.third__prize__background {
+    background: #f3c1c6;
+}
+
+.none__prize__background {
+    background: #000000;
+    color: #ffffff;
+}
