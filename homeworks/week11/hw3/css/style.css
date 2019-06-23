@@ -1,0 +1,199 @@
+body {
+    background: #e3c4a8;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+.alert {
+    color: red;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: #33313b;
+    color: #f6f5f5;
+    padding: 15px 10px;
+}
+
+.index_title {
+    font-size: 32px;
+    margin-left: 15px;
+}
+
+.account a {
+    color: #f6f5f5;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 20px;
+    transition: all 0.3s;
+}
+
+.account a:hover {
+    color: #e3c4a8;
+}
+
+.alert__title {
+    text-align: center;
+    font-size: 28px;
+    margin: 20px 0px;
+}
+
+main {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.board__post-title {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.board__post-input input {
+    width: 200px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 3px;
+    border-style: none;
+    outline: none;
+}
+
+.board__post-textarea textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 18px;
+    border-radius: 3px;
+    border-style: none;
+    outline: none;
+}
+
+.board__post-submit {
+    padding: 15px 25px;
+    border-style: none;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 15px;
+    transition: all 0.3s;
+}
+
+.board__post-submit:hover {
+    background: #33313b;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.board__commments {
+    margin-top: 25px;
+    background: #33313b;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.board__commment {
+    background: #f6f5f5;
+    border: 2px solid #33313b;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 15px 0;
+}
+
+.board__commment-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #211717;
+    font-size: 18px;
+}
+
+.board__commment-content {
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+.board__btn {
+    margin-top: 20px;
+}
+
+.board__btn a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid #33313b;
+    color: #33313b;
+    border-radius: 3px;
+    transition: all 0.3s;
+    margin-right: 10px;
+}
+
+.board__btn a:hover {
+    background: #33313b;
+    color: #ffffff;
+}
+
+.login__container,
+.register__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12%;
+}
+
+.login__title,
+.register__title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.login__form,
+.register__form {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login__form input,
+.register__form input {
+    font-size: 18px;
+    padding: 12px 15px;
+    margin-top: 20px;
+    outline: none;
+    border-style: none;
+    border-radius: 3px;
+}
+
+.login__submit:hover,
+.register__submit:hover {
+    background: #33313b;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.page_link {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid #33313b;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000000;
+    text-align: center;
+    font-size: 20px;
+    margin: 20px 20px 0 0;
+    border-radius: 3px;
+}
+
+.page_link:hover {
+    background: #33313b;
+    color: #ffffff;
+}
