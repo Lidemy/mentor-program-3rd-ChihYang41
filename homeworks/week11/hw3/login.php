@@ -15,9 +15,9 @@
 			if (isset($_GET['error'])) {
 				if ($_GET['error'] === 'empty') {
 					echo "<p class='alert'> 填好填滿才能登入喔 </p>";
-				}  else if ($_GET['error'] === 'pwderror') {
+				} else if ($_GET['error'] === 'pwderror') {
 					echo "<p class='alert'> 密碼輸入錯誤 </p>";
-				} else if($_GET['error'] === 'othererror') {
+				} else if ($_GET['error'] === 'othererror') {
 					echo "<p class='alert'> ㄅ歉，登入失敗，請重新輸入帳號密碼 </p>";
 				}
 			}

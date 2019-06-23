@@ -3,7 +3,7 @@
 	require_once('classes/user.class.php');
 	require_once('./login_check.php');
 
-	if(isset($_GET['id'])) {
+	if (isset($_GET['id'])) {
 		$id = $_GET['id'];
 		$sql = "DELETE FROM `ChihYang41_comments` WHERE id = $id AND account = '$account'";
 		$result = $conn->query($sql);

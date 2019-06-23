@@ -10,11 +10,11 @@
 	<div class="register__container">
 		<h1 class="register__title">會員註冊</h1>
 		<?php 
-			if(isset($_GET['error'])) {
-				if($_GET['error'] === 'empty'){
+			if (isset($_GET['error'])) {
+				if ($_GET['error'] === 'empty') {
 					echo "<p class='alert'> 全部都要填喔 </p>";
 				}
-				if($_GET['error'] === 'usertaken'){
+				if ($_GET['error'] === 'usertaken') {
 					echo "<p class='alert'> 此帳號有人使用 </p>";
 				}
 			}

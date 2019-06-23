@@ -1,7 +1,7 @@
 <?php  
 	require_once('./conn.php');
 	require_once('./utils.php');
-	
+
 	$account = $_POST['account'];
 	$password = $_POST['password'];
 	$nickname = $_POST['nickname'];
@@ -14,7 +14,7 @@
 		$sql = "SELECT * FROM ChihYang41_users WHERE account = ?";
 		$stmt = $conn->stmt_init();
 
-		if(!$stmt->prepare($sql)){
+		if (!$stmt->prepare($sql)) {
 			echo 'SQL error!';
 			exit();
 		} else {
@@ -23,13 +23,13 @@
 	 		$stmt->store_result();
 	 		$isRegistered = $stmt->num_rows();
 
-	 		if($isRegistered > 0) {
+	 		if ($isRegistered > 0) {
 	 			header("Location: ./register.php?error=usertaken");
 				exit();
 	 		} else {
 	 			$sql = "INSERT INTO ChihYang41_users(account, password, nickname) VALUES (?, ?, ?)";
 	 			$stmt = $conn->stmt_init();
-	 			if(!$stmt->prepare($sql)){
+	 			if (!$stmt->prepare($sql)) {
 					echo 'SQL error!';
 					exit();
 				} else {
