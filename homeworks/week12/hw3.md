@@ -8,7 +8,7 @@
 → scuderia:據我音樂系的學妹講的一句話：「你看那些外表不錯的，大   
 → lawrence99:便也是臭的                                     
 ```
-如果是以 SQL 語法舉例，像是如果想在 users 這個 table 選取資料，或許或這樣輸入 SQL 語法：
+如果是以 SQL 語法舉例，像是如果想在 users 這個 table 選取資料，或許會這樣輸入 SQL 語法：
 ```SQL
 SELECT * FROM users WHERE account = '$account' AND password = '$password'
 ```
@@ -19,7 +19,7 @@ SELECT * FROM users WHERE account = '' or 1=1 --' AND password = '$password'
 ```
 account 為空值或是 1=1(true)，並且把後面的內容變成註解，代表就算他沒有帳號密碼都能順利執行這段程式碼並登入。
 
-亦或者是更嚴重一點的是搭配 ```UNION``` 語句，比如像是
+抑或者是更嚴重一點的是搭配 ```UNION``` 語句，比如像是
 ```SQL
 SELECT * FROM users WHERE account = '' OR 1=1 UNION SELECT account,password FROM users-- AND password = '$password'
 
