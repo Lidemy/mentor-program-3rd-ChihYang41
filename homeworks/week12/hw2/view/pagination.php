@@ -3,7 +3,7 @@
 	 $comments_per_page = 20;
 
 	 // 抓 page 的 query 
-	 $page_sql = "SELECT * FROM ChihYang41_comments";
+	 $page_sql = "SELECT * FROM ChihYang41_comments WHERE parent_id = 0";
 	 $page_result = $conn->query($page_sql);
 	 $number_of_results = $page_result->num_rows;
 

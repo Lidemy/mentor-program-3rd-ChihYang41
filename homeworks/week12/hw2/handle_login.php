@@ -17,23 +17,24 @@
 	 	$stmt->execute();
 	 	$result = $stmt->get_result();
 	 	$row = $result->fetch_assoc();
-		if ($result->num_rows > 0) {
-			if (password_verify($password, $row['password'])) {
-				getSessionId($conn, $account);
-				setcookie("session_id", setSessionId($conn, $account), time()+3600*24);
-				echo "<script>
-						alert('登入成功！');
-						location.href = './index.php';
-					</script>";
-			} else {
-				header("Location: ./login.php?error=pwderror");
-				exit();
-			}
-		} else {
-			header("Location: ./login.php?error=othererror");
+
+	 	if ($result->num_rows === 0) {
+	 		header("Location: ./login.php?error=othererror");
+			exit();
+	 	}
+
+	 	if (!password_verify($password, $row['password'])) {
+			header("Location: ./login.php?error=pwderror");
 			exit();
 		}
-		
+
+		getSessionId($conn, $account);
+		setcookie("session_id", setSessionId($conn, $account), time()+3600*24);
+		echo "<script>
+				alert('登入成功！');
+				location.href = './index.php';
+			</script>";
+
 		$stmt->close();
 		$conn->close();
 	}	
