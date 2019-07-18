@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#BackTop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
