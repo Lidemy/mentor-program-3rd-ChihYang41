@@ -1,0 +1,116 @@
+@import 'reset';
+@import 'utils';
+
+$white-color: #ffffff;
+$black-color: #000000;
+
+body {
+    @include body-background; 
+    color: $white-color;
+    padding-bottom: 70px;
+}
+
+.text__overflow {
+    @include text-overflow;
+}
+
+nav {
+    @include primary-flex-settings;
+    padding: 20px;
+    margin-bottom: 40px;
+    background: $black-color;
+}
+
+.nav__title {
+    font-size: 24px;
+}
+
+
+.game__list {
+    display: flex;
+    flex-direction: row;
+    li {
+        color: #E3E3E3;
+        margin-left: 20px;
+        &:hover {
+            color: $white-color;
+            opacity: 1.0;
+            cursor: pointer;
+        }
+    }
+}
+
+
+main {
+    width: 100%;
+    margin: 40px auto 20px auto;
+    @include primary-flex-settings;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main__title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.main__subtitle {
+    font-size: 18px;
+    text-align: center;
+}
+
+.stream__card {
+    margin: 5px;
+    border-radius: 3px;
+    padding: 5px;
+    background: $black-color;
+    transition: all 0.3s;
+    opacity: 0.9;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        opacity: 1.0;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+.stream__info {
+    @include primary-flex-settings;
+    justify-content: flex-start;
+    margin-top: 3px;
+    padding: 3px;
+    width: 250px;
+}
+
+.stream__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.stream__name {
+    color: #fff;
+    margin-left: 10px;
+    line-height: 1.5;
+}
+
+.btn {
+    display: block;
+    border-style: none;
+    border-radius: 5px;
+    background: $white-color;
+    width: 140px;
+    height: 70px;
+    font-size: 18px;
+    margin: 60px auto 0 auto;
+    transition: all 0.3s;
+    outline: none;
+    &:hover {
+        cursor: pointer;
+        background: #a06ee1;
+        color: $white-color;
+    };
+}

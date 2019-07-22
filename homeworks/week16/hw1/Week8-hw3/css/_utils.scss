@@ -1,0 +1,19 @@
+@mixin body-background {
+    background-image: url(http://dry.hk/wp-content/uploads/2017/09/bSjQKEc.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+}
+
+@mixin text-overflow {
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin primary-flex-settings {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+}
