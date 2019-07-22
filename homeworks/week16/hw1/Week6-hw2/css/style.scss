@@ -1,0 +1,664 @@
+@import 'reset';
+@import 'utils';
+
+$text-gray: rgba(0, 0, 0, .54);
+$pri-margin: 30px;
+
+.text__gray {
+    color: $text-gray;
+}
+
+/*navbar*/
+
+nav {
+    box-shadow: 0px 8px 12px rgba(160, 156, 156, 0.1);
+    margin-bottom: $pri-margin;
+}
+
+.navbar {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+
+    &__home {
+        @include primary-flex-settings;
+
+        &__title {
+            font: {
+                size: 28px;
+                weight: bold;
+                family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            }
+
+            padding-left: 20px;
+            border-left: 1px solid #E3E3E3;
+        }
+    }
+
+    &__option {
+        @include primary-flex-settings;
+        justify-content: center;
+    }
+
+    &__avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.svg {
+    &__icon {
+        margin-right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+
+    &__items {
+        width: 25px;
+        height: 25px;
+        margin-right: 20px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+}
+
+/*main content*/
+
+main {
+    article {
+        @include flex-column-justify-center;
+        margin-top: 100px;
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+.article {
+    &__title {
+        font: {
+            family: Georgia, Cambria, "Times New Roman", Times, serif;
+            size: 42px;
+            weight: 400;
+        }
+
+        padding: 16px 0;
+        line-height: 1.25;
+    }
+
+    &__info {
+        @include primary-flex-settings;
+        font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+        margin-bottom: 40px;
+    }
+}
+
+
+.author {
+    &__avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    &__info {
+        margin-left: 10px;
+        line-height: 1.5;
+    }
+}
+
+figure {
+    figcaption {
+        text-align: center;
+        color: rgba(0, 0, 0, .68);
+        margin: 10px 0;
+    }
+}
+
+.cover {
+    &__image {
+        img {
+            width: 100%;
+            transition: all 0.5s;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:active {
+                transform: scale(1.3);
+            }
+        }
+    }
+}
+
+.text__p {
+    font: {
+        size: 21px;
+        weight: 300;
+        family: Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+
+    margin-top: 38px;
+    line-height: 1.58;
+
+    a {
+        color: inherit;
+    }
+}
+
+.section {
+    &__title {
+        font: {
+            weight: 600;
+            family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+            size: 34px;
+        }
+
+        margin-top: 56px;
+        line-height: 1.15;
+        letter-spacing: -.015em;
+    }
+}
+
+/*main content bottom*/
+
+.main {
+    &__bottom {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+
+    &__tag {
+        button {
+            border: {
+                radius: 3px;
+                style: none;
+            }
+
+            background: rgba(0, 0, 0, .05);
+            color: rgba(0, 0, 0, .68);
+            padding: 5px 10px;
+            margin-bottom: 15px;
+
+            &:hover {
+                background: rgba(0, 0, 0, .1);
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__social {
+        @include primary-flex-settings;
+        justify-content: space-between;
+
+        &__icon {
+            @include flex-row-justify-between;
+
+            svg {
+                margin-right: 5px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    &__clap {
+        @include primary-flex-settings;
+    }
+
+    &__following {
+        @include flex-row;
+        margin-top: $pri-margin;
+        padding-top: 15px;
+        border-top: 1px solid #E3E3E3;
+    }
+}
+
+
+.clap {
+    &__button {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: transparent;
+        border: 1px solid #000000;
+
+        &:hover {
+            cursor: pointer;
+            border: 1px solid #02B875;
+        }
+    }
+
+    &__svg {
+        width: 35px;
+        height: 35px;
+        color: #02B875;
+        fill: #02B875;
+    }
+
+    &__info {
+        font: {
+            family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            size: 14px;
+        }
+
+        margin-left: 20px;
+        line-height: 1.5;
+    }
+}
+
+
+.following {
+    &__author {
+        @include flex-row;
+        width: 49%;
+        padding-right: 20px;
+    }
+
+    &__avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+
+    &__info {
+        margin-left: 20px;
+        width: 45%;
+    }
+
+    &__title {
+        margin: 5px 0;
+        font-size: 20px;
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                color: #02B875
+            }
+        }
+    }
+
+    &__intro {
+        margin-top: 10px;
+        font-weight: 300;
+        line-height: 1.2;
+    }
+
+    &_btn {
+        border: {
+            radius: 3px;
+            style: none;
+        }
+
+        background: #02B875;
+        height: 32px;
+        padding: 0 14px;
+        color: #ffffff;
+        margin-left: 15px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+
+/*aside*/
+
+aside {
+    position: fixed;
+    width: 10%;
+    top: 30%;
+    left: 5%;
+    z-index: 100;
+}
+
+.aside {
+    &__title {
+        font: {
+            size: 16px;
+            weight: bold;
+        }
+
+        margin: 7px 0;
+    }
+
+    &__text {
+        word-break: break-word;
+        word-wrap: break-word;
+    }
+
+    &__section {
+        @include flex-column;
+    }
+
+    &__btn {
+        border: {
+            radius: 3px;
+            style: none;
+        }
+
+        background: #02B875;
+        height: 32px;
+        width: 80%;
+        padding: 0 14px;
+        color: #ffffff;
+        margin-bottom: 30px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__icon {
+        @include flex-column;
+        padding-top: 15px;
+        border-top: 1px solid #E3E3E3;
+
+        svg {
+            margin-top: 15px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__clap {
+        &__group {
+            @include flex-row
+        }
+
+        &__num {
+            margin: 23px 0 0 5px;
+            font-size: 14px;
+        }
+    }
+}
+
+/*footer*/
+
+footer {
+    background: #fafafa;
+    padding: 80px 0px 60px 0;
+}
+
+/*footer suggestion*/
+
+.suggestion {
+    @include flex-row-justify-around;
+    width: 70%;
+    margin: 0 auto 40px auto;
+
+    &__card {
+        margin: 0 1%;
+        box-shadow: 0 1px 7px rgba(0, 0, 0, .05);
+        border-radius: 5px;
+        background: #ffffff;
+        padding: 10px;
+        position: relative;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__cover {
+        height: 150px;
+        background: url("https://cdn-images-1.medium.com/fit/c/800/240/1*hThqkIeX36hiBruQWqwRKw.jpeg") center center;
+        background-size: cover;
+        border-radius: 5px;
+    }
+
+    &__related {
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    &__title {
+        font: {
+            size: 20px;
+            family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+        }
+
+        padding: 5px;
+    }
+
+    &__info {
+        @include primary-flex-settings;
+        margin-top: 20px;
+    }
+
+    &__icon {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+
+    }
+
+    &__clap {
+        &__svg {
+            fill: #02B875;
+        }
+    }
+
+    &__space {
+        width: 15px;
+        display: inline-block;
+    }
+
+    &__avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+    }
+
+    &__author {
+        @include flex-column-justify-center;
+        line-height: 1.5;
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    &__date {
+        font-size: 12px;
+    }
+}
+
+/*footer resposne*/
+
+.response {
+    @include flex-column;
+    width: 50%;
+    margin: 0 auto;
+
+    &__title {
+        font: {
+            size: 14px;
+            weight: 600;
+        }
+
+        color: rgba(0, 0, 0, .68);
+        margin-bottom: 20px;
+    }
+
+    &__textarea {
+        position: relative;
+    }
+
+    &__personal__avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        position: absolute;
+        left: 20px;
+        top: 15px;
+    }
+
+    &__input {
+        border: .5px solid #cccccc;
+
+        border: {
+            radius: 2px;
+            style: none;
+        }
+
+        width: 100%;
+        padding: 20px 20px 20px 70px;
+        font-size: 20px;
+        box-shadow: 1px 1px 5px rgba(5, 5, 5, 0.1);
+    }
+
+    &__card {
+        margin-top: $pri-margin;
+        padding: 15px 20px;
+        background: #ffffff;
+        box-shadow: 1px 1px 5px rgba(5, 5, 5, 0.1);
+        border-radius: 2px;
+    }
+
+    &__who__claps {
+        font-size: 14px;
+        margin-bottom: $pri-margin;
+    }
+
+    &__users {
+        &__info {
+            @include primary-flex-settings;
+        }
+
+        &__details {
+            @include flex-column;
+            font-size: 14px;
+            margin-left: 10px;
+            line-height: 1.3;
+        }
+
+        &__avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+        }
+
+        &__name {
+            color: #1C9963;
+        }
+    }
+
+    &__content {
+        font: {
+            size: 18px;
+            weight: 300;
+            family: Georgia, Cambria, "Times New Roman", Times, serif;
+        }
+
+        margin-top: 20px;
+        line-height: 1.58;
+        word-break: break-word;
+    }
+
+    &__clap {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+
+        &__svg {
+            fill: #02B875
+        }
+
+        &__num {
+            margin-left: 5px;
+        }
+    }
+
+    &__icon {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+
+    &__options {
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+/*RWD*/
+
+@media(max-width: 1200px) {
+
+    .aside {
+
+        &__title,
+        &__text,
+        &__btn {
+            display: none;
+        }
+
+        &__icon {
+            border-top: none;
+        }
+    }
+
+    .main__following {
+        @include flex-column;
+    }
+
+    .following {
+        &__author {
+            width: 100%;
+        }
+
+        &__info {
+            width: 70%;
+            margin-bottom: $pri-margin;
+        }
+    }
+
+    .suggestion {
+        @include flex-column;
+
+        &__card {
+            margin-bottom: $pri-margin;
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    main article {
+        width: 80%;
+    }
+
+    aside {
+        display: none;
+    }
+
+    .main__bottom {
+        width: 80%;
+    }
+
+    .suggestion {
+        width: 85%;
+    }
+
+    .response {
+        width: 80%;
+    }
+}
