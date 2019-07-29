@@ -7,7 +7,7 @@
 知道 Event Loop 的運作模式，知道 call stack、Web APIs、callback queue。
 
 另外，我終於搞懂為什麼
-```javascript=
+```javascript
 var btn = document.querySelectorAll('button')
 for(var i=0; i<=4; i++) {
   btn[i].addEventListener('click', function() {
@@ -69,7 +69,7 @@ Hoisting 的理解就在可以在宣告前使用他這樣。然後變數會是 u
 
 總之就是一直在懷疑人生，等我真正確定自己懂的時候是在寫作業的時候，我能夠真正用自己的話解釋出來的時候我才知道自己通了，就是一切的運作流程和概念都是息息相關的，很像打坐悟道。
 
-但我也發現這些東西是沒辦法分開理解的，比如 closure 講到 scope，但 hw2 是 Event Loop + Scope，而真正要解釋輸出也的確會牽涉到 Event Loop。
+我也發現這些東西是沒辦法分開理解的，比如 closure 講到 scope，但 hw2 是 Event Loop + Scope，而真正要解釋輸出也的確會牽涉到 Event Loop。
 
 又或者是講到物件導向時講到 ```apply()``` ，然後用這個說明 constructor，接著又扯到 this，第一次我完全聽不懂在說什麼，超級精神渙散，但就是硬看下去，等到進入發散狀態，腦內資訊好像又自己重新整理並消化了。
 
