@@ -83,7 +83,7 @@ globalEC:{
 ```
 
 ### 為什麼 setTimeout 的 console.log(i) 印出 5 
-我覺得上面一步一步的解釋可能不夠清楚，而現在找到的文章也沒辦法很明白解釋整個過程，所以再用自己的方式消化一遍，並且重新講解。
+我覺得上面一步一步的解釋可能不夠清楚，所以再用自己的方式消化一遍，並且重新講解。
 
 印出 5 有兩個前提：
 1. **是一個非同步的程式碼，所以會被丟進 Web APIs**
@@ -92,10 +92,3 @@ globalEC:{
 什麼意思呢？先講第一個條件，因為是非同步的程式碼，所以被丟進去 Web APIs ，丟進去的其實是 ```()=>{console.log(i)}``` ，也就是一個 function，當它執行的時候，已經是整個 ```main()``` 結束的時候了。
 
 這時候匿名函式在 call stack 中執行，牽扯到了第二個條件，```console.log(i)``` 要找 i 這個值，在自身的 scope 中找不到 i，所以往 scope chain 的上方找，從 globalEC 找到 i，此時已經是 5（因為 for 迴圈跑完了），所以變成 console.log(5)。
-
-[Open所有的函式都是閉包：談 JS 中的作用域與 Closure ](https://github.com/aszx87410/blog/issues/35?source=post_page---------------------------) 中所舉到 btn 點下去 i 會跳出 5 的例子也是相同，要用更清楚的方式來講解就是配合 Event Loop，就會知道為什麼文章說是：「**幫它加一個 function 是按下去的時候會跳出 i 而已，我又沒有直接執行這個 function。**」，
-
-因為更詳細的運作方式是：
-1. 點擊 btn 後，```function(){alert(i)}``` 到 call stack 後再被丟到 Web APIs
-2. 接著從 Web APIs 再到 callback queue，接著 function 被抓進 call stack 執行，把 ```alert(i)``` 丟進 call stack 中。
-3. ```alert(i)``` 順著 scope chain 找到 global 中 i 的值，跳出 5。
