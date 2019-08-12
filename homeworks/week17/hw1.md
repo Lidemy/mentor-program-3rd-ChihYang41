@@ -66,7 +66,7 @@ console.log('ByeBye');
 
 2. 先把```console.log('hi - 1')``` 丟進 call stack 中，然後執行印出 hi - 1，再 pop 出去。
 
-3. 執行 ```setTimeout```，再丟進 Web Apis 中，等待五秒計時。
+3. 執行 ```setTimeout```，丟進 call stack 中，執行後再把秒數跟 callback function 丟進 Web Apis 中，等待五秒計時。
 
 4. 再往下執行到 ```console.log('ByeBye')```，丟進 call stack 中，執行印出 ByeBye，再 pop 出去。
 

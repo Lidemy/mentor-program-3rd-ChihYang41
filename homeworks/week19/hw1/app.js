@@ -69,11 +69,10 @@ app.delete('/todos/:id', (req, res) => {
   });
 });
 
-// 這裡的路由寫得很不滿意，想請問 Huli 通常會怎麼寫？
 app.patch('/todos/:id', (req, res) => {
   const { id } = req.params;
+  const { content, isCompleted } = req.body;
   if (req.body.content) {
-    const { content } = req.body;
     db.query('UPDATE todo_table SET content = ? WHERE id = ?', [content, id], (err) => {
       // error
       if (err) {
@@ -83,23 +82,7 @@ app.patch('/todos/:id', (req, res) => {
       res.sendStatus(200);
       return res.end();
     });
-  }
-
-  if (req.body.isCompleted) {
-    const { isCompleted } = req.body;
-    db.query('UPDATE todo_table SET isCompleted = ? WHERE id = ?', [isCompleted, id], (err) => {
-      // error
-      if (err) {
-        return console.log(err);
-      }
-      // response
-      res.sendStatus(200);
-      return res.end();
-    });
-  }
-
-  if (!req.body.isCompleted) {
-    const { isCompleted } = req.body;
+  } else {
     db.query('UPDATE todo_table SET isCompleted = ? WHERE id = ?', [isCompleted, id], (err) => {
       // error
       if (err) {
@@ -112,7 +95,37 @@ app.patch('/todos/:id', (req, res) => {
   }
 });
 
+// app.patch('/todos/:id', (req, res) => {
+//   const { id } = req.params;
+//   const { content, isCompleted } = req.body;
+//   const columns = [];
+//   const params = [];
+//   if (content) {
+//     columns.push('content = ?')
+//     params.push(content)
+//   } else {
+//     columns.push('isCompleted = ?')
+//     params.push(isCompleted)
+//   }
+
+//   if (columns.length === 0) {
+//     return res.end()
+//   }
+
+//   params.push(id)
+//   const query = `UPDATE todo_table SET ${columns.join(',')} WHERE id = ?`
+//   db.query(query, params, (err) => {
+//     // error
+//     if (err) {
+//       return console.log(err);
+//     }
+//     // response
+//     res.sendStatus(200);
+//     return res.end();
+//   });
+// });
+
 app.listen(port, () => {
   db.connect();
-  console.log('hello you succeced get into 3000 port');
+  console.log('hello this is 3000 port');
 });

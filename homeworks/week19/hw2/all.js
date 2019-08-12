@@ -80,8 +80,8 @@ async function todoCompleted() {
 // 編輯 todos(這裡寫超爛，但還沒想到怎改比較好 Q_Q 麻煩大力鞭)
 async function editTodo() {
   try {
-    const id = Number(this.parentNode.parentNode.getAttribute('dataId'));
     const listItem = this.parentNode.parentNode;
+    const id = Number(listItem.getAttribute('dataId'));
     const editInput = listItem.querySelector('input[type="text"]');
     const todoContent = listItem.querySelector('p');
     const originalContent = todoContent.innerText;
