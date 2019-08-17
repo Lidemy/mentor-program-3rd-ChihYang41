@@ -120,7 +120,7 @@ Lecture 9 很認真在上課，但是會被下面留言笑死。
 
 原理我覺得蠻酷的，實作概念是「讓你進去網頁沒辦法先下載圖片，等到滑到那裡才可以下載。」
 
-基本都會在 img 不加 src，然後把圖片路徑寫在 data-src 裡，然後在 window 加上 scroll 這個EventListener，當你滑動到圖片位置的時候，JavaScript 就會取 data-src 的內容，把它放到 src 裡，這時候就可以下載圖片了。
+基本都會在 img 不加 src，然後把圖片路徑寫在 data-src 裡，然後在 window 加上 EventListener，當你滑動到圖片位置的時候，JavaScript 就會取 data-src 的內容，把它放到 src 裡，這時候就可以下載圖片了。
 
 不過這邊遇到的問題是 library 實作 lazy loading 都是支援 img tag， 用 webp 格式就比較孤立無援，目前是看到 [lazyload](https://github.com/verlok/lazyload) 說有支援 webp，但是我自己實作上沒效果，而我用他的 demo 測試看看也沒有 lazy-loading，不知道是哪裡出了問題，有待研究。
 
