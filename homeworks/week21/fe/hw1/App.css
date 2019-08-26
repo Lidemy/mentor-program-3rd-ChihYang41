@@ -1,0 +1,41 @@
+.list-group {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.todo-title {
+    color: #ffffff;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.todo-input-text {
+    outline: none;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+.input-container {
+    padding-bottom: 20px;
+}
+
+.list-group-item {
+    font-size: 18px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.list-group-item p {
+    margin-bottom: 0;
+}
+
+.todo-delete {
+    color: #fff;
+}
+
+.list-group-item-success p {
+    text-decoration: line-through;
+}

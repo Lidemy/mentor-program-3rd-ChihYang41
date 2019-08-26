@@ -1,0 +1,27 @@
+.post-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card {
+  width: 30%;
+  margin-right: 20px;
+  transition: 0.3s all;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.card-header {
+  font-size: 24px;
+}
+
+.post-list button {
+  margin: 20px auto;
+  text-align: center;
+}
