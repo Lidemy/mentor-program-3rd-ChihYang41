@@ -1,0 +1,22 @@
+.content {
+  width: 960px;
+  padding: 20px;
+  margin: 0 auto;
+  word-break: break-all;
+}
+
+.card-content {
+  overflow: auto;
+  white-space : normal;
+  text-overflow : initial;
+}
+
+.btn {
+  margin-top: 30px;
+}
+
+@media(max-width: 768px) {
+  .content {
+    width: 90%;
+  }
+}
