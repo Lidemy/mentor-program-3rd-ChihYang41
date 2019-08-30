@@ -1,0 +1,24 @@
+ul {
+  font-size: 18px;
+}
+
+a {
+  color : rgba(255, 255, 255, 0.75);
+  margin-right: 15px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+a:hover {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+.active , .active a{
+  color: #ffffff;
+}
+
+.navbar-light .navbar-brand {
+  color : rgba(255, 255, 255, 0.75);
+  font-size: 20px;
+}
