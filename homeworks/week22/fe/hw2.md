@@ -71,7 +71,7 @@ app.use(cors{
 });
 ```
 
-Client 端則是把 request 的 withCredentials 設置為 true，就可以在 reqeust headdr 帶上 cookie。
+Client 端則是把 request 的 withCredentials 設置為 true，就可以在 reqeust header 帶上 cookie。
 
 用 axios 大概是這樣：
 ```javascript=
