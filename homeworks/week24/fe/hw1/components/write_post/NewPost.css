@@ -1,0 +1,20 @@
+.new-post-author label, .new-post-title label, .new-post-content label {
+  display: block;
+  font-size: 18px;
+}
+
+.new-post-author textarea, .new-post-title textarea {
+  border-radius: 5px;
+  padding: 5px;
+  width: 70%;
+  font-size: 16px;
+  height: 40px;
+}
+
+.new-post-content textarea {
+  border-radius: 5px;
+  padding: 5px;
+  width: 70%;
+  height: 200px;
+  font-size: 16px;
+}

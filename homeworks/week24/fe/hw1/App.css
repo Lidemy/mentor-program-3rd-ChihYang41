@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+
+.main-page {
+  padding: 20px;
+  margin-top: 70px;
+}
+
+.main-page p {
+  font-size: 18px;
+  margin-top: 20px;
+}

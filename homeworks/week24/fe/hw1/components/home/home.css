@@ -1,0 +1,10 @@
+.latest-posts-list {
+  width: 50%;
+  margin: 30px auto 0 auto;
+}
+
+@media(max-width: 960px) {
+  .latest-posts-list {
+    width: 100%;
+  }
+}

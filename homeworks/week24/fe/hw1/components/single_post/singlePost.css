@@ -1,0 +1,80 @@
+.content {
+  width: 100%;
+  padding: 20px 20px 90px 20px;
+  margin: 40px auto;
+  word-break: break-all;
+  background: #27292b;
+  border-radius: 10px;
+  /*height: calc( 100vh - 80px - 56px);*/
+  box-sizing: border-box;
+  position: relative;
+  text-align: left;
+}
+
+.content p , .content a {
+  color: #fff;
+  white-space: pre-wrap;
+}
+
+.content h1, .content h2, .content h3, .content h4, .content h5,.content h6{
+  color: #fff;
+}
+
+.card-content {
+  overflow: auto;
+  white-space : normal;
+  text-overflow : initial;
+}
+
+.card-content a{
+  color: #ff4893;
+  margin-right: 0;
+}
+
+.edit-title textarea {
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+  font-size: 16px;
+  height: 40px;
+}
+
+.edit-content textarea {
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+  height: 300px;
+  font-size: 16px;
+}
+
+
+.btn {
+  margin-top: 30px;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 300px;
+  margin: 0 auto;
+  position: absolute;
+  right: 20px;
+  bottom: 30px;
+}
+
+.back-btn-container a {
+  margin-right: 0px;
+}
+
+.alert {
+  z-index: 10;
+  right: 20px;
+  position: absolute;
+}
+
+@media(max-width: 768px) {
+  .content {
+    width: 90%;
+  }
+}
