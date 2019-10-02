@@ -13,3 +13,4 @@ const customMiddleware = store => next => action => {
 ```
 
 也就是 functional programming 的寫法，經過重重篩選後回傳 action。
+
